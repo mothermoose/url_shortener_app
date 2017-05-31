@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
+get '/links' => 'links#index'
+get '/links/new' => 'links#new'
+post '/links' => 'links#create'
+
   devise_scope :user do
    authenticated :user do
      root 'links#index', as: :authenticated_root
@@ -13,4 +17,4 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end 
 
-get '/links' => 'links#index'
+
