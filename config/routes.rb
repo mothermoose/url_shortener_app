@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
 get '/links' => 'links#index'
 get '/links/new' => 'links#new'
-post '/links' => 'links#create'
+post '/links' => 'links#create' 
+get '/links/:id' => 'links#show'
 
   devise_scope :user do
    authenticated :user do
